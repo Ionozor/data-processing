@@ -98,3 +98,8 @@ print 'Meteoric_cover_spectra_date.jpg','-dpng','-landscape','-FArial:18'
 close
 save -ascii Meteoric_cover_spectra.txt Z
 close
+plot(t,Z)
+xlabel"Time interval [t/24 hrs.]"
+ylabel"Hypothetic atomic number [-]"
+print 'Meteoric_cover_spectral_date.jpg','-dpng','-landscape','-FArial:18'
+close
