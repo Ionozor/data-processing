@@ -6,4 +6,8 @@ We can deduce that some d-elements such as scandium, titanium, chromium and mang
 First of all, we can expect ionization - recombination reaction with the OH partical, thus OH* + hf <-> OH+ + e-. Looking at the model, we can see the plasma discharge was fired up in the ionized cover.
 Corresponing with the relatively hight temperatures we could expect the presence of some s- and p- metallic elements, for example Li and Mg or their positive ions as well.
 The spectral models are given, too. We can even deduce that the presence of those metals was verified.
+We can also show the modeled curves describing the fireball's electron density and plasma temperature.
 This model was created by Vojtěch Laitl. All rights reserved.
+For more informations about The Czech Fireballs Network's results see
+http://www.asu.cas.cz/en/departments/interplanetary-matter-department/new-meteorite-fall-observed-in-detail-by-czech-fireball-cameras
+http://www.astro.cz/clanky/slunecni-soustava/dalsi-pad-meteoritu-s-rodokmenem-podrobne-zachyceny-ceskou-bolidovou-siti.html.
