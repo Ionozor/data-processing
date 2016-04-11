@@ -7,7 +7,6 @@ We can see the dependence could be described as an oscillation function, while t
 - X-ray energy:
 If the radio signal intensity level is known, we can computed the value of radiated energy. Within our approximation, the basic formulas describing the power and the energy of a homogenous transmitter was used. The approximation is invariant for the condition t << 1, which is filled.
 Such a model provides the current X-ray energy and the amount of radiated photons can be computed, too.
-To complete the sample data, a graph describing the emitted energy during the Io-B Jupiter Storm detected on December 20, 2015 was enclosed.
 - Ray-burst distance:
 By the time the current X-ray energy is known, the ray burst's distance can be modeled. The appropriate numerical solution is given by the differential equations' system describing the linear momentum and the angular momentum.
 It can be deduced, that the hypothetic distance significantly differs in the time. However, the strong emission was detected clearly and the single peaks approach each other well.
