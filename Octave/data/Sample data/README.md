@@ -2,7 +2,7 @@ Some sample data from VLF station are given. They were chosen from March 6, 2016
 For these models, we use the radio signal measured on our SID monitors. Special attention is paid to the DHO38 transmitter.
 Let’s go through the data graph to graph.
 - Acceleration:
-- - If an impact reaches the ionosphere, some electrons in the low temperature plasma are accelerated. This plot describes the numeric solution of this acceleration. We can see that this phenomenon can be described as an oscilátory motion with variable amplitude which corresponds with the radio signal intensity level, indeed. The next claim we are able to do is that the phenomena are completely quasistatic.
+If an impact reaches the ionosphere, some electrons in the low temperature plasma are accelerated. This plot describes the numeric solution of this acceleration. We can see that this phenomenon can be described as an oscilátory motion with variable amplitude which corresponds with the radio signal intensity level, indeed. The next claim we are able to do is that the phenomena are completely quasistatic.
 - Critical frequency change:
 In this graph, the momental electron plasma frequency is shown. This is the result of the basic equation of the whole model, a polynomial differential equation. Using this quantity, the electron density can be computed.
 - Debye radius:
@@ -23,6 +23,8 @@ The Arrhenius equation can be approached to compute on which energy level are th
 The termodynamci entropy is shown. We can see, that its value is small.
 - Gradients:
 A 3D plot where the electron density’s change is compared with the height of the currently localized ionospheric plasma. On the plots -Height and -Height 2, the height is drawn, too but more detailed. The graph called -Ionogram shows the height as a function of the total electron density’s derivation. We can easily recognize some impacts that are distinguished like strong peaks.
+- Horizontal flow
+Using the general formula which describes the ray refraction in the ionosphere, we can compute the horizontal scope where the ionospheric plasma is being distributed. The plots -Horizontal distribution and -Vertical distribution show this value compared in the time with the current D region's height. The focusion or defocusion can be recognised easily and some strong impact are shown clearly as well. 
 - Heat:
 If the temperatur eis known, the heat energy can also be approached. We can see that its value is relatively small and converges to a constant.
 - Intensity of meteoric (solar) impact:
