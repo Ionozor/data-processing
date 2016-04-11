@@ -24,7 +24,7 @@ The termodynamci entropy is shown. We can see, that its value is small.
 - Gradients:
 A 3D plot where the electron density’s change is compared with the height of the currently localized ionospheric plasma. On the plots -Height and -Height 2, the height is drawn, too but more detailed. The graph called -Ionogram shows the height as a function of the total electron density’s derivation. We can easily recognize some impacts that are distinguished like strong peaks.
 - Horizontal flow
-Using the general formula which describes the ray refraction in the ionosphere, we can compute the horizontal scope where the ionospheric plasma is being distributed. The plots -Horizontal distribution and -Vertical distribution show this value compared in the time with the current D region's height. The focusion or defocusion can be recognised easily and some strong impact are shown clearly as well. 
+Using the general formula which describes the ray refraction in the ionosphere, we can compute the horizontal scope where the ionospheric plasma is being distributed. The plots -Horizontal distribution and -Vertical distribution show this value compared in the time with the current D region's height. The focusion or defocusion can be recognized easily and some strong impact are shown clearly as well. 
 - Heat:
 If the temperatur eis known, the heat energy can also be approached. We can see that its value is relatively small and converges to a constant.
 - Intensity of meteoric (solar) impact:
@@ -40,13 +40,13 @@ The energy level plasma which reaches the ionospheric plasma as the corpuscular 
 - Scope:
 The fluctuation scope is solved as a primitive function of their velocity. We can see that the maximal peaks of this quantity are always smaller then the Debye radius, which is suitable for every ideal plasma.
 - SID model:
-The radio signal intensity level is drawn and compared with our model. The input files, the tima and the intensity level, are saved as t.txt and L.txt, so they can be used for other computation. We can easily recognise strong SIDs in this plot.
+The radio signal intensity level is drawn and compared with our model. The input files, the tima and the intensity level, are saved as t.txt and L.txt, so they can be used for other computation. We can easily recognize strong SIDs in this plot.
 - Specific calorific capacity:
 The specific calorific capacity of the ionospheric plasma is approached using the current temperature.
 - Temperature:
 Eventually, we can have a look at the temperature. We use the electron density to compute this quantity and we can see that the middle value of the temperature is approximately ~193.02 K.
 - Velocity:
-The middle quadratic velocity is given as the function of the kinetic energy and temperature. We can easily recognise the fluctuation peak within this plot.
+The middle quadratic velocity is given as the function of the kinetic energy and temperature. We can easily recognize the fluctuation peak within this plot.
 - Wavelengths decay:
 The wavelengths‘ decay some chosen molecules‘ ionization is computed in appropriate units. Those values are used to draw the energy and plasma spectra.
 - Meteoric (solar) wavelengths:
