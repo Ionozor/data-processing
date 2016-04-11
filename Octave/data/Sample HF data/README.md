@@ -19,3 +19,4 @@ The wavelenght where the most of energy is currently radiated enables us to draw
 The discussed data were also uploaded in the ASCII text files. In the file "x.txt", the time in format [t/24 hrs.] is given while the radio signal intensity level was written into the "y.txt" file.
 
 The data were prepared by Vojtěch Laitl and Jaroslav Maxa. All rights reserved.
+
