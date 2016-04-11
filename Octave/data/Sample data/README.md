@@ -54,6 +54,6 @@ This figures show the wavelenght on which the most energy is currently emitted. 
 - X-ray flux:
 If an impact reaches the ionosphere, we are able to compute its X-ray flux. Special attention is paid to the flux trapped in the Debye sphere and also to the ionization potential of this flux.
 - ASCII text files:
-The discussed quantities are also saved in the enclosed ascii text files.
+The discussed quantities are also saved in the enclosed ascii text files. The "t.txt" file contains the time written in format [t/24 hrs.] and the measured radio signal intensity level is given in the "L.txt" file.
 
 This database was created by Vojtěch Laitl and Michal Žejdl. All rights reserved.
