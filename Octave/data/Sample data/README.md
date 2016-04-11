@@ -2,7 +2,7 @@ Some sample data from VLF station are given. They were chosen from March 6, 2016
 For these models, we use the radio signal measured on our SID monitors. Special attention is paid to the DHO38 transmitter.
 Let’s go through the data graph to graph.
 - Acceleration:
-If an impact reaches the ionosphere, some electrons in the low temperature plasma are accelerated. This plot describes the numeric solution of this acceleration. We can see that this phenomenon can be described as an oscilátory motion with variable amplitude which corresponds with the radio signal intensity level, indeed. The next claim we are able to do is that the phenomena are completely quasistatic.
+--If an impact reaches the ionosphere, some electrons in the low temperature plasma are accelerated. This plot describes the numeric solution of this acceleration. We can see that this phenomenon can be described as an oscilátory motion with variable amplitude which corresponds with the radio signal intensity level, indeed. The next claim we are able to do is that the phenomena are completely quasistatic.
 - Critical frequency change:
 In this graph, the momental electron plasma frequency is shown. This is the result of the basic equation of the whole model, a polynomial differential equation. Using this quantity, the electron density can be computed.
 - Debye radius:
