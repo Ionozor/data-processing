@@ -7,7 +7,7 @@ bindir=$basedir/bin
 datadir=$basedir/data
 s2o=$bindir/speclab2octave.sh
 
-for dir in HVEZDARNA OSTROV SUN; do
+for dir in HVEZDARNA OSTROV SOKOLOV SUN; do
 	echo $dir
 	for y in 15 16; do for m in {01..12}; do for d in {01..31}; do
 		inputfile=~/Dropbox/$dir/sid$d$m$y.txt
