@@ -42,7 +42,7 @@ cd "$outdir" || exit
 $octavedir/bin/speclab2octave.sh "$sunfile" x.txt y.txt
 
 case "$location" in
-HVEZDARNA|OSTROV)
+HVEZDARNA|OSTROV|SOKOLOV)
 	$octavedir/bin/speclab2octave.sh "$inputfile" t.txt L.txt
 	;;
 #SUN)
@@ -75,14 +75,40 @@ esac
 
 # common data flow
 case "$location" in
-HVEZDARNA|OSTROV)
+HVEZDARNA|OSTROV|SOKOLOV)
+	run_script kineticky_model
+	add_zero_line hybnost_el.txt
+	run_script frekvence
+	run_script hustota
+	add_zero_line dn.txt
+	run_script teplota
+	run_script plazmovy_parametr
+	run_script kineticka
+	add_zero_line hybnost.txt
+	run_script potencialni
+	run_script rychlost
+	add_zero_line zrychleni.txt
+	run_script vychyleni
+	run_script zrychleni_elektronu
+	run_script aktivacni
+	run_script ionizace
+	run_script vyska_ionosfery
+	run_script ionogram
 	run_script impakt
 	add_zero_line dTe.txt
 	add_zero_line dT_EL.txt
 	run_script intenzita
 	run_script plasma
+	run_script tderiv
+	add_zero_line dt.txt
+	run_script zarivy_tok
+	run_script zareni
+	run_script teplo
+	add_zero_line dQ.txt
+	run_script entropie
 	run_script spectrum
 	run_script meteoric_spectra
 	run_script solar
+	run_script ionosphere
 	;;
 esac
