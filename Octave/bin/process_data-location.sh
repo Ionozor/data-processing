@@ -42,7 +42,7 @@ test $(ls | wc -l) -gt 0 && rm *
 $octavedir/bin/speclab2octave.sh "$sunfile" x.txt y.txt
 
 case "$location" in
-HVEZDARNA|OSTROV)
+HVEZDARNA|OSTROV|SOKOLOV)
 	$octavedir/bin/speclab2octave.sh "$inputfile" t.txt L.txt
 	;;
 #SUN)
@@ -74,6 +74,10 @@ OSTROV)
 	run_script model_SID1
 	run_script vyboje1
 	;;
+SOKOLOV)
+	run_script model_SID2
+	run_script vyboje2
+;;
 SUN)
 	run_script radioteleskop
 	run_script energie_radioteleskop
@@ -83,7 +87,7 @@ esac
 
 # common data flow
 case "$location" in
-HVEZDARNA|OSTROV)
+HVEZDARNA|OSTROV|SOKOLOV)
 	run_script kineticky_model
 	add_zero_line hybnost_el.txt
 	run_script frekvence
@@ -117,5 +121,6 @@ HVEZDARNA|OSTROV)
 	run_script spectrum
 	run_script meteoric_spectra
 	run_script solar
+	run_script ionosphere
 	;;
 esac
