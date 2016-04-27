@@ -9,6 +9,6 @@ yy=$(date -d yesterday +%y)
 mm=$(date -d yesterday +%m)
 dd=$(date -d yesterday +%d)
 
-for location in HVEZDARNA OSTROV SUN; do
+for location in HVEZDARNA OSTROV SOKOLOV SUN; do
 	$bindir/process_data-location.sh $location $yy $mm $dd
 done
