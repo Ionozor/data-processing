@@ -25,7 +25,7 @@ save -ascii critical_frequency_DHO38.txt nu
 n_0 = (nu.^2*m_el*epsilon)/e^2
 n = -1/4.*L1.^-4 + n_0
 save -ascii electron_density_DHO38.txt n
-dn = [0; [diff(n)]
+dn = [0;[diff(n)]
 T = -E_k1./k_B
 lambda_De = sqrt((epsilon.*k_B.*T)./(n.*e^2))
 save -ascii debye_radius_DHO38.txt lambda_De
@@ -73,7 +73,7 @@ exp1 = exp(f_H./10^11)
 exp2 = exp(-f_H./10^11)
 f_B = (1-mD)./B1
 n_H = L.^-5 + 4.*N.*f_B.*(exp1 + exp2)
-save -ascii height_dependent_TEC_DHO38.txt n  _H
+save -ascii height_dependent_TEC_DHO38.txt n_H
 p = h0.*(mD-1)
 p1 = H.*(1-mD) + pi
 n_el = 10.*(exp((2.*N_D./1000.*(p1-p) + B)./B) + 4.*H)
