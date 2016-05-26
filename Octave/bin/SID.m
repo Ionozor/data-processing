@@ -1,6 +1,6 @@
-#Vojtěch Laitl 2016
-#Ionozor group - VLF data analysis
-#Created by GNU Octave
+%Vojtěch Laitl 2016
+%Ionozor group - VLF data analysis
+%Created by GNU Octave
 dt = [0;[diff(t)]]
 L1 = 0.1.*L
 n = -1/4.*L1.^-4
@@ -19,8 +19,8 @@ E_k = - (36*pi)^-2.*epsilon^-4/3.*n/e^-4
 p = [0;[diff(E_k)]]
 nu_Delta = p.*c./h
 nu = 23400 + nu_Delta 
-#DHO 38 band
-#Possible for every band which is determined before. E.g. nu = nu_Delta + ["DHO38" "NAA" "GBZ" ...].
+%DHO 38 band
+%Possible for every band which is determined before. E.g. nu = nu_Delta + ["DHO38" "NAA" "GBZ" ...].
 save -ascii critical_frequency_DHO38.txt nu
 n_0 = (nu.^2*m_el*epsilon)/e^2
 n = -1/4.*L1.^-4 + n_0
