@@ -36,6 +36,7 @@ a = "ionozor/VLF/VLFOSTROV/R1/"
 b = num2str(YY)
 c = num2str(MM)
 local = [a b D Ip c]
+cd(path0)
 cd (local)
 mkdir(num2str(DD))
 cd (num2str(DD))
@@ -49,6 +50,7 @@ a = "ionozor/VLF/HFKVARY/R2/"
 b = num2str(YY)
 c = num2str(MM)
 local = [a b D Ip c]
+cd(path0)
 cd (local)
 mkdir(num2str(DD))
 cd (num2str(DD))
