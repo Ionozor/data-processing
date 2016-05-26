@@ -1,8 +1,6 @@
-%Vojtěch Laitl 2016
-%Ionozor group - VLF data analysis
-load 't.txt' 
-load 'L.txt'
-%Files are loaded from a splitter solved by supplemental SHELL scripts so far.
+#Vojtěch Laitl 2016
+#Ionozor group - VLF data analysis
+#Created by GNU Octave
 dt = [0;[diff(t)]]
 L1 = 0.1.*L
 n = -1/4.*L1.^-4
@@ -20,12 +18,14 @@ N_A = 6.022*10^23
 E_k = - (36*pi)^-2.*epsilon^-4/3.*n/e^-4
 p = [0;[diff(E_k)]]
 nu_Delta = p.*c./h
-nu = 23400 + nu_Delta %DHO 38 band
+nu = 23400 + nu_Delta 
+#DHO 38 band
+#Possible for every band which is determined before. E.g. nu = nu_Delta + ["DHO38" "NAA" "GBZ" ...].
 save -ascii critical_frequency_DHO38.txt nu
 n_0 = (nu.^2*m_el*epsilon)/e^2
 n = -1/4.*L1.^-4 + n_0
 save -ascii electron_density_DHO38.txt n
-dn = [0;[diff(n)]
+dn = [0; [diff(n)]
 T = -E_k1./k_B
 lambda_De = sqrt((epsilon.*k_B.*T)./(n.*e^2))
 save -ascii debye_radius_DHO38.txt lambda_De
