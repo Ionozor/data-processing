@@ -1,7 +1,13 @@
 %Vojtěch Laitl 2016
 %Ionozor group - VLF data analysis
 %Created by GNU Octave
-dt = [0;[diff(t)]]
+localsid = num2str(DD)
+localpath = [local D localsid]
+cd(localpath)
+load 't.txt'
+load 'L.txt'
+t = 10.*t./10
+dt = [0 [diff(t)]]
 L1 = 0.1.*L
 n = -1/4.*L1.^-4
 epsilon = 8.8542*10^-12
@@ -16,7 +22,7 @@ m_el = 9.109*10^-31
 R = 8.314
 N_A = 6.022*10^23
 E_k = - (36*pi)^-2.*epsilon^-4/3.*n/e^-4
-p = [0;[diff(E_k)]]
+p = [0 [diff(E_k)]]
 nu_Delta = p.*c./h
 nu = 23400 + nu_Delta 
 %DHO 38 band
