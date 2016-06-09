@@ -3,14 +3,9 @@
 Algorithms running VLF data analysis are given.
 
 Recently, new scripts 
-* `SID.m` and 
+* `SID1.m` and 
 * `pathlocation.m` 
 were added. All of the diagnostics given in `/data-processing/Octave/Zpracovani_dat/README.md` within the data flow are now simplified using such a script. The supplemental one, `pathlocation.m`  runs the data processing within the currently operationg stations using the data storage at space.astro.cz/ionozor/VLF/.
-
-Owing to the necessity to work with open-source format and have analysed the whole VLF spectra, new scripts 
-* `band.m` which draws the spectra within the real mesurement and
-* `SID1.m` working in -hdf5 friendly environment having done the requests to space.astro.cz 
-were added.
 
 Following BASH scripts 
 * `speclab2octave.sh`, 
