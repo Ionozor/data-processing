@@ -2,7 +2,7 @@
 %Ionozor group - VLF data analysis
 %Created by GNU Octave
 localsid = num2str(DD)
-localpath = [local D localsid]
+localpath = [local B localsid]
 cd(localpath)
 t = data(:,1)
 nu = data(:,2)
