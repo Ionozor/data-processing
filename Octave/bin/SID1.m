@@ -4,9 +4,10 @@
 localsid = num2str(DD)
 localpath = [local D localsid]
 cd(localpath)
-load -hdf5 data.h5
 t = data(:,1)
-L = data(:,2)
+nu = data(:,2)
+L = data(:,3)
+%expecting the file format after reading by Octave as [time~0.5s frequency~10Hz relative intensity~0.001dB]
 dt = [0 [diff(t)]]
 L1 = 0.1.*L
 n = -1/4.*L1.^-4
@@ -26,8 +27,8 @@ T = -E_k./k_B
 lambda_De = sqrt((epsilon.*k_B.*T)./(n.*e^2))
 save -hdf5 debye_radius.h5 lambda_De
 p = [0 [diff(E_k)]]
-nu_Delta = p.*c./h
-band
+nu_delta = p.*c./h
+omega = nu_delta + nu
 save -hdf5 frequency.h5 omega
 n_0 = (nu.^2*m_el*epsilon)/e^2
 n = -1/4.*L1.^-4 + n_0
@@ -156,7 +157,7 @@ save -hdf5 intensity_solar.h5 I
 lambdas = b./TS
 save -hdf5 wavelenghts_sun.h5 lambda_S
 ZS = abs(log(((1.5*R_inf.*sqrt(3*R_inf*c./lambdas))./(1.5*R_inf))) - 29)
-save atoms_solar_DHO38.dat ZS
+save -hdf5 atoms_solar.h5 ZS
 I0 = -26.74
 R = 1.496*10^11
 Is = exp(L./10)
@@ -165,3 +166,8 @@ alpha = acos(fce)
 save -hdf5 fallout_angle.h5 alpha
 x = abs(H.*tan(alpha))
 save -hdf5 horizontal_drift.h5 x
+tau = (dt.+t)./t 
+F = E_a.*e./(tau.*n)
+save -hdf5 x_ray_flux.h5 F
+F_V = F./(lambda_De.*e)
+save -hdf5 x_ray_flux_debye_sphere.h5 F_V
