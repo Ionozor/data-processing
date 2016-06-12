@@ -4,13 +4,19 @@
 localsid = num2str(DD)
 localpath = [local B localsid]
 cd(localpath)
-t = data(:,1)
-nu = data(:,2)
-L = data(:,3)
+t0 = data(1,:)
+stringt = (1:columns(t))
+t = (t0 + 0.5.*(stringt-1))'
+nu0 = data(:,1)
+stringnu = ((1:rows(nu)))'
+nu = nu0 + 10.*(stringnu-1)
+L = data(2:,2:)
+string
 %expecting the file format after reading by Octave as [time~0.5s frequency~10Hz relative intensity~0.001dB]
 dt = [0 [diff(t)]]
 L1 = 0.1.*L
-n = -1/4.*L1.^-4
+n0 = -1/4.*L1.^-4
+n = mean(n0,'g')
 epsilon = 8.8542*10^-12
 e = 1.602*10^-19
 k_B = 1.38*10^-23
