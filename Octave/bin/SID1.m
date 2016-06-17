@@ -6,10 +6,10 @@ localpath = [local B localsid]
 cd(localpath)
 t0 = data(1,:)
 stringt = (1:columns(t))
-t = (t0 + 0.5.*(stringt-1))'
+t = (t0 + stept.*(stringt-1))'
 nu0 = data(:,1)
 stringnu = ((1:rows(nu)))'
-nu = nu0 + 10.*(stringnu-1)
+nu = nu0 + stepnu.*(stringnu-1)
 L = data(2:,2:)
 string
 %expecting the file format after reading by Octave as [time~0.5s frequency~10Hz relative intensity~0.001dB]
