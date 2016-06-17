@@ -46,6 +46,8 @@ cd(path0)
 cd (local)
 mkdir(num2str(DD))
 cd (num2str(DD))
+stept = 0.5
+stepnu = 10
 SID1
 data = urlread(path11);
 a = "ionozor/VLF/HFKVARY/R2/"
@@ -57,6 +59,8 @@ cd (local)
 mkdir(num2str(DD))
 cd (num2str(DD))
 cd(path0)
+stept = 0.5
+stepnu = 10
 SID1
 data = urlread(path21);
 a = "ionozor/VLF/HFKVARY/SOKOLOV-R1/"
@@ -67,4 +71,6 @@ cd (local)
 mkdir(num2str(DD))
 cd (num2str(DD))
 cd(path0)
+stept = 0.5
+stepnu = 10
 SID1
