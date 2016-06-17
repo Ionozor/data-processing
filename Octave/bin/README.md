@@ -5,11 +5,13 @@ Algorithms running VLF data analysis are given.
 Recently, new scripts 
 * `SID1.m` and 
 * `pathlocation.m` 
-were added. All of the diagnostics given in `/data-processing/Octave/Zpracovani_dat/README.md` within the data flow are now simplified using such a script. The supplemental one, `pathlocation.m`  runs the data processing within the currently operationg stations using the data storage at space.astro.cz/ionozor/VLF/.
+were added. All of the diagnostics given in `/data-processing/Octave/Zpracovani_dat/README.md` within the data flow are now simplified using such a script. The supplemental one, `pathlocation.m`  runs the data processing within the currently operationg stations using the data storage at space.astro.cz/ionozor/VLF/ within the possibility to set the time and frequency step done by GNU radio for each station.
 
 If the scripts are being run using a physical or virtual computer, it is necessary to create a directory from where the data will be uploaded at space.astro.cz.
 
 It should contain the initial folder `/.../folder/ionozor/VLF/"stations"/"years/"months"/`. From the location `/.../folder/`, the scripts themselves are up to be operated. The subfolders need to be written in accordance with the measuring stations and their names. Into each station's subfolder, the year and month subsubfolders have to be created. An example of such directories can be sent.
+
+After that, the data will be up to be sent at space.astro.cz in the appropriate format using the common station key.
 
 Following BASH scripts 
 * `speclab2octave.sh`, 
