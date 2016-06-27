@@ -83,7 +83,7 @@ exp1 = exp(f_H./10^11)
 exp2 = exp(-f_H./10^11)
 f_B = (1-mD)./Bl1
 n_H = L.^-5 + 4.*N.*f_B.*(exp1 + exp2)
-save -hdf5 height_dependent_TEC.h5 n_H
+save -hdf5 height_dependent_conc.h5 n_H
 p = h0.*(mD-1)
 p1 = H.*(1-mD) + pi
 n_el = 10.*(exp((2.*N_D./1000.*(p1-p) + Bl)./Bl) + 4.*H)
@@ -137,7 +137,7 @@ dTe1 = [0 [diff(T)]
 lambda = b./T
 save -hdf5 wavelenghts_meteor.h5 lambda
 Z = log(((1.5*R_inf.*sqrt(3*R_inf*c./lambda))./(1.5*R_inf)))-9
-save atoms_meteors_DHO38.dat Z
+save -hdf5 atoms_meteoric.h5 Z
 dT = abs(10.*(log(T)))
 n = (16.*epsilon^3.*k_B^3.*pi^2.*lambda_De.^1.5.*exp(dT./(0.1.*N_D)))./(9.*e^6.*N_D.^2)
 Z = -1./dTe1.*dT
