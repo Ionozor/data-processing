@@ -10,13 +10,12 @@ t = (t0 + stept.*(stringt-1))'
 nu0 = data(:,1)
 stringnu = ((1:rows(nu)))'
 nu = nu0 + stepnu.*(stringnu-1)
-L = data(2:,2:)
-string
+L0 = data(2:,2:)
+L = mean(L0,'g')
 %expecting the file format after reading by Octave as [time~0.5s frequency~10Hz relative intensity~0.001dB]
 dt = [0 [diff(t)]]
 L1 = 0.1.*L
 n0 = -1/4.*L1.^-4
-n = mean(n0,'g')
 epsilon = 8.8542*10^-12
 e = 1.602*10^-19
 k_B = 1.38*10^-23
