@@ -1,0 +1,91 @@
+%Vojtěch Laitl 2016
+%Ionozor group - VLF data analysis
+t0 = data(1,:)
+stringt = (1:columns(t))
+t = (t0 + stept.*(stringt-1))'
+t0 = ceil(H0./24.*rows(t))
+t1 = floor(H1./24.*row(t))
+t = t(,t0:t1)
+nu0 = data(:,1)
+stringnu = ((1:rows(nu)))'
+nu = nu0 + stepnu.*(stringnu-1)
+L0 = data(2:,t0:t1)
+L = mean(L0,'g')
+dt = [0 [diff(t)]]
+L1 = 0.1.*L
+n0 = -1/4.*L1.^-4
+epsilon = 8.8542*10^-12
+e = 1.602*10^-19
+k_B = 1.38*10^-23
+gamma = 10^-3
+R_inf = 3.2899*10^15
+c = 3*10^8
+b = 2.898*10^-3
+h = 6.626*10^-34
+m_el = 9.109*10^-31
+R = 8.314
+N_A = 6.022*10^23
+E_k = - (36*pi)^-2.*epsilon^-4/3.*n/e^-4
+T = -E_k./k_B
+lambda_De = sqrt((epsilon.*k_B.*T)./(n.*e^2))
+save -hdf5 debye_radius.h5 lambda_De
+p = [0 [diff(E_k)]]
+nu_delta = p.*c./h
+omega = nu_delta + nu
+n_0 = (nu.^2*m_el*epsilon)/e^2
+n = -1/4.*L1.^-4 + n_0
+dn = [0 [diff(n)]]
+n0 = 23400^2*epsilon*m_el/e^2
+N = n-n0
+Bl = 1+(0.01.*L)
+mD = 10^-10
+h0 = abs(pi*i.*Bl./(2+2.*mD))
+h0_t = (10.*h0).^2./10
+f_n = dn.*Bl./(N.*(1-mD))
+f_n2 = f_n.^2
+f_ln = log(1/2.*f_n-((f_n2.^2 - 4).^1/2))
+h_t = abs((Bl.*f_ln + 2.*pi.*i)./(1-mD))
+H = 10.*(h0_t + h_t)
+Bl1 = 10+(0.1.*L)
+f_H = H.*(1-mD)./Bl1
+exp1 = exp(f_H./10^11)
+exp2 = exp(-f_H./10^11)
+f_B = (1-mD)./Bl1
+n_H = L.^-5 + 4.*N.*f_B.*(exp1 + exp2)
+p = h0.*(mD-1)
+p1 = H.*(1-mD) + pi
+n_el = 10.*(exp((2.*N_D./1000.*(p1-p) + Bl)./Bl) + 4.*H)
+n_el1 = n_el./10^6
+T_e = 3^2/3.*e^2.*n_el.^1/3.*N_D.^2/3./(epsilon*k_B*(4*pi)^2/3).*lambda_De.^1.2
+n_e = 10.*(exp((2.*N_D./1000000.*(p1-p) + Bl)./Bl) + 4.*H)
+n_e1 = n_e./10^6
+T_EL = 3^2/3.*e^2.*n_e.^1/3.*N_D.^2/3./(epsilon*k_B*(4*pi)^2/3).*lambda_De.^1.2
+lambda_M = (h*c.*lambda_De.^(N_D./100))./(k_B.*T_e)
+lambda_S = (h*c.*lambda_De.^(N_D./100))./(k_B.*T_EL)
+f_nh = (-2.*H.*(mD-1) + h0_t.*(-mD) + h0_t + pi)./B
+f_exp = exp(f_nh)
+f_T = (-2^4/3.*(mD-1).*N.*(1-mD).*log10(2.71818281).*f_exp)./(3.*B.^2.*N.*(1-mD).*f_exp)
+dT = 3^2/3.*e^2.*N_D.^2/3./(epsilon.*k_B.*(4*pi)^2/3).*lambda_De.^6/5.*f_T
+dTe = [0 [diff(T_e)]]
+Z = -1./dTe.*dT
+f1 = n_el.*E_a.*e./Z
+f2 = k_B.*T_e
+f_I = f1.*f2.*exp(-T_el./T_e)
+I = abs(log(f_I))
+T = 10.*abs(log(b./lambda_M))
+dTe1 = [0 [diff(T)]
+lambda = b./T
+Z = log(((1.5*R_inf.*sqrt(3*R_inf*c./lambda))./(1.5*R_inf)))-9
+dT = abs(10.*(log(T)))
+n = (16.*epsilon^3.*k_B^3.*pi^2.*lambda_De.^1.5.*exp(dT./(0.1.*N_D)))./(9.*e^6.*N_D.^2)
+Z = -1./dTe1.*dT
+f1 = n.*E_a.*e./Z
+f2 = k_B.*T
+f_I = f1.*f2.*exp(-T_el./T)
+IM = abs(log(f_I))
+spectra = [t lambda IM]
+save -hdf5 HE_impact_spectra.h5 spectra
+plot3(t,lambda,IM)
+axis('labely','labelz')
+ylabel"Wavelength [m]"
+zlabel"Intensity [a.u.]"
