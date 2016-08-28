@@ -14,6 +14,8 @@ day_start = np.asarray(str(time.strftime("%d")).zfill(2))
 day_end = day_start
 hour_start = np.asarray(str(np.asarray(str(time.strftime("%H")),dtype='int')-1).zfill(2))
 hour_end = hour_start
+minute_start = np.asarray(str(1).zfill(2))
+minute_end = np.asarray(str(59).zfill(2))
 
 def download_file(url):
     local_filename = url.split('/')[-1]
@@ -26,7 +28,7 @@ def download_file(url):
                 f.flush()
     return local_filename
 
-def download_fits(dir, year_start, month_start, day_start, hour_start, 01, year_end, month_end, day_end, hour_end, 59):
+def download_fits(dir, year_start, month_start, day_start, hour_start, minute_start, year_end, month_end, day_end, hour_end, minute_end):
     '''
     Creates subdirectory 'snapshots' and downloads set of fits images from http://space.astro.cz/bolidozor/ from time period given in arguments. Returns nothing.
     >>>import getboli
