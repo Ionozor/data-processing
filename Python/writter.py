@@ -1,6 +1,7 @@
 import bzpost
 import datetime, requests, os, glob
 import numpy as np
+import time
 import matplotlib.pylab as plt
 from astropy.io import fits
 
