@@ -7,16 +7,16 @@ from astropy.io import fits
 
 sourceUrl = 'http://space.astro.cz/ionozor/VLF/OBSUPICE/OBSUPICE_VLF_R2/'
 
-year_start = np.asarray(time.strftime("%Y"))
+year_start = np.asarray(time.strftime("%Y"),dtype='int')
 year_end = year_start
-month_start = np.asarray(str(time.strftime("%m")).zfill(2))
+month_start = np.asarray(str(time.strftime("%m")).zfill(2),dtype='int')
 month_end = month_start
-day_start = np.asarray(str(time.strftime("%d")).zfill(2))
+day_start = np.asarray(str(time.strftime("%d")).zfill(2),dtype='int')
 day_end = day_start
-hour_start = np.asarray(str(np.asarray(str(time.strftime("%H")),dtype='int')-2).zfill(2))
+hour_start = np.asarray(str(np.asarray(str(time.strftime("%H")),dtype='int')-2).zfill(2),dtype='int')
 hour_end = hour_start
-minute_start = np.asarray(str(1).zfill(2))
-minute_end = np.asarray(str(59).zfill(2))
+minute_start = np.asarray(str(1).zfill(2),dtype='int')
+minute_end = np.asarray(str(59).zfill(2),dtype='int')
 
 def download_file(url):
     local_filename = url.split('/')[-1]
