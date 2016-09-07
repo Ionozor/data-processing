@@ -1,7 +1,7 @@
 import bzpost
 import datetime, requests, os, glob
-import numpy as np
 import time
+import numpy as np
 import matplotlib.pylab as plt
 from astropy.io import fits
 
@@ -18,16 +18,27 @@ hour_end = hour_start
 minute_start = np.asarray(str(1).zfill(2),dtype='int')
 minute_end = np.asarray(str(59).zfill(2),dtype='int')
 
+print('The initial time is given by:')
+print(year_start,month_start,day_start,hour_start,minute_start)
+print('The terminal time is given by:')
+print(year_end,month_end,day_end,hour_end,minute_end)
+
 def download_file(url):
     local_filename = url.split('/')[-1]
     # note the stream=True parameter
     r = requests.get(url, stream=True)
     with open(local_filename, 'wb') as f:
-        for chunk in r.iter_content(chunk_size=1024): 
+        for chunk in r.iter_content(chunk_size=1024):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
                 f.flush()
     return local_filename
+
+print('The souce URL is:')	
+print(Source_url)
+download_file(sourceUrl)
+print('The local filename is:')
+print(local_filename)
 
 def download_fits(dir, year_start, month_start, day_start, hour_start, minute_start, year_end, month_end, day_end, hour_end, minute_end):
     '''
@@ -52,6 +63,11 @@ def download_fits(dir, year_start, month_start, day_start, hour_start, minute_st
 
     con.close()
     os.chdir(wd)
+	
+download_fits('snapshots', year_start, month_start, day_start, hour_start, minute_start, year_end, month_end, day_end, hour_end, minute_end)
+print('The directory and datetime are given by:')
+print('snapshots', year_start, month_start, day_start, hour_start, minute_start, year_end, month_end, day_end, hour_end, minute_end)
+
 
 def mkmosaic(dir, output='out.fits', axis='y', part=1, showplot=True):
     '''
@@ -86,6 +102,8 @@ def mkmosaic(dir, output='out.fits', axis='y', part=1, showplot=True):
         plt.show()
     del a #when axis were switched the variable caused skip of the else condition
 
+mkmosaic('snapshots', 'out.fits', 'y', 1, True)
+	
 def split_single(image):
     """Split three channels raw file converted into fits format into respective files containing one channel. Color is appednde into filename.
     :image: Imput image.
@@ -101,6 +119,8 @@ def split_single(image):
         hdu = fits.PrimaryHDU(eval(i))
         hdu.writeto(filename + '_' + i + '.fits')
     
+split_single(out.fits)
+	
 def split_dir(dir):
     """Iterate through fits images with multiple color channels and split their parts into fits with only one color channel and append that color to generated filename.
     :dir: The directory in which three channel fits are present.
@@ -116,6 +136,8 @@ def split_dir(dir):
         except:
             os.chdir(wd)
     os.chdir(wd)
+	
+split_dir('snapshots')
 
 # apparently not needed, glob.glob
 def regex_dir(dir):
@@ -129,3 +151,5 @@ def regex_dir(dir):
         except:
             pass
     return collector
+	
+regex_dir('snapshots')
