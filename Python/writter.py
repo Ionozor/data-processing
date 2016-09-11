@@ -35,7 +35,7 @@ def download_file(url):
     return local_filename
 
 print('The souce URL is:')	
-print(Source_url)
+print(sourceUrl)
 download_file(sourceUrl)
 print('The local filename is:')
 print(local_filename)
